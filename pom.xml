@@ -16,11 +16,10 @@
     </properties>
 
     <dependencies>
-        <!-- Обновлённая версия Commons Lang -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.13.0</version>
+            <version>3.18.0</version>
         </dependency>
 
         <!-- JavaFX модули с явной версией -->
@@ -64,7 +63,7 @@
         </resources>
 
         <plugins>
-            <!-- Компилятор -->
+            <!-- Компилятор Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -72,6 +71,7 @@
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <release>18</release>
+                    <!-- Подавление unchecked warnings -->
                     <compilerArgs>
                         <arg>-Xlint:-unchecked</arg>
                     </compilerArgs>
@@ -88,7 +88,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Установка локального JAR -->
+            <!-- Установка локального JAR desktop-game-engine -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
@@ -111,7 +111,7 @@
                 </executions>
             </plugin>
 
-            <!-- Copy dependencies -->
+            <!-- Копирование зависимостей -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -151,7 +151,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Тестовый плагин -->
+            <!-- Тесты -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -166,9 +166,4 @@
         </plugins>
     </build>
 </project>
-
-
-
-
-
 
